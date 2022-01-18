@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+ int main(){
+	
+	char nama[30][20];
+	int i,j,k,sorting,temp ,kepribadian[20],membaca[20],menulis[20],akhir[20];
+	cout<<" Menghitung Nilai Penerimaan Mahasiswa Baru "<<endl;
+	cout<<" Masukan Jumlah Mahasiswa : ";cin>>j;
+	cout<<endl;
+
+	for(i=1;i<=j;i++){
+		
+	cout<<" Mahasiswa Ke - "<<i<<endl;
+	cout<<" Nama Mahasiswa : ";cin>>nama[i];
+	cout<<" Nilai Tes Kepribadian : ";cin>>kepribadian[i];
+	cout<<" Nilai Tes Membaca : ";cin>>membaca[i];
+	cout<<" Nilai Tes Menulis : ";cin>>menulis[i];
+	akhir[i]=(kepribadian[i]*0.3)+(membaca[i]*0.3)+(menulis[i]*0.3);
+	
+
+}
+	for (i=1;i<=j;i++){
+	cout << "Nilai Akhir :"<<akhir[i]<<endl;
+}
+		for(i=1; i<=j; i++){
+				if(akhir[i]>=80)
+	cout << "Grade Yang diperoleh : A";
+	else if(akhir[i]>=75&&akhir[i]<80)
+	cout << "Grade Yang diperoleh : B";
+	else if(akhir[i]>=65&&akhir[i]<75)
+	cout << "Grade Yang diperoleh : C";
+	else if(akhir[i]>=60&&akhir[i]<65)
+	cout << "Grade Yang diperoleh : D";
+	else 
+	cout << "Grade Yang diperoleh : E";
+	cout<<endl;
+	
+		if(akhir[i]>=65 && akhir[i] <=100 ){
+			cout<<i <<" . "<<nama[i]<<" || "<<akhir[i]<< " keterangan : LULUS  "<<endl ;
+		}else if (akhir[i] < 65 && akhir[i] >=0 ){
+			cout<<i <<" . "<<nama[i]<<" || "<<akhir[i]<< " keterangan : TIDAK LULUS  "<<endl ;
+		}else {
+			cout<<"error";
+		}
+	} 
+	for (i=1;i<=j;i++){
+		for (k=i+1;k<j;k++){
+			if(akhir[i]>akhir[k]){
+				temp=akhir[i];
+				akhir[i]=akhir[k];
+				akhir[k]=temp;
+			}
+		}
+	}
+	cout<<"data nilai yg  telah diurutkan : "<<endl;
+	for(i=1;i<=j;i++){
+		{
+			cout<<akhir[i]<<" ";
+		}
+	}
+	cin.get();
+	return 0;
+    }
